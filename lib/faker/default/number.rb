@@ -122,7 +122,7 @@ module Faker
       ##
       # Produces a number in hexadecimal format.
       #
-      # @param digits [Integer] Number of digits in the he
+      # @param digits [Integer] Number of digits to generate the binary as string
       # @return [String]
       #
       # @example
@@ -137,6 +137,21 @@ module Faker
         hex = ''
         digits.times { hex += rand(15).to_s(16) }
         hex
+      end
+
+      # Produces a number in binary format.
+      #
+      # @param digits [Integer] Number of digits in the he
+      # @return [String]
+      #
+      # @example
+      #   Faker::Number.binary(digits: 4) #=> "1001"
+      #
+      # @faker.version next
+      def binary(digits: 4)
+        bin = ''
+        digits.times { bin += rand(2).to_s(2) }
+        bin
       end
 
       ##
